@@ -1,0 +1,42 @@
+<p>servers works!</p>
+<label>Server Name</label>
+<input 
+type="'text"
+class="form-control"
+(input)="onUpdateServerName($event)"
+>
+<p>{{serverName}}</p>
+<input
+  type='text'
+  class="form-control"
+  [(ngModel)]="serverName"
+>
+
+<button
+ class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()"
+>Add server</button>
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+
+
+<app-server></app-server>
+<app-server></app-server>
+
+<div class="'container">
+<div class="row">
+    <div class="col-xs-12">
+        <ol>
+            <li>The Four Data Binding in Angular  </li>
+            <li>Add a Input feild </li>
+        </ol>
+        <label> Username</label>
+        <input type="text" class="form-control" [(ngModel)]="username">
+        <p>{{username}}</p>
+        <button class="btn btn-primary" [disabled]="username === ''"
+        (click)="username = ''"
+        >Reset User</button>
+    </div>
+</div>
+</div>
